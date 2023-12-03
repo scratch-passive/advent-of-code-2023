@@ -3,15 +3,14 @@
 # On each line, the calibration value can be found by combining the first 
 # digit and the last digit (in that order) to form a single two-digit number.
 
-def main():
+def main(file_path):
     sumCalibration = 0
-    with open(r"C:\Users\dayna\advent-of-code-2023\day_one\advent_input.txt", "r") as file:
+    with open(file_path, "r") as file:
         for line in file:
             num1 = findFirstDigit(line)
             num2 = findLastDigit(line)
             calibrationValue = combineDigits(num1, num2)
             sumCalibration += calibrationValue
-            print(line, num1, num2, calibrationValue)
     print(sumCalibration)
     return
 
@@ -32,4 +31,5 @@ def combineDigits(num1, num2):
     else:
         return 0
 
-main()
+file_path = r"C:\Users\dayna\advent-of-code-2023\advent-of-code-2023\day_one\advent_input.txt"
+main(file_path)
